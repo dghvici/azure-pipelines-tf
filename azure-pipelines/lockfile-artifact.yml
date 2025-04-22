@@ -61,6 +61,10 @@ stages:
               artifactName: 'terraform-state'
               downloadPath: 'terraform'
 
+          - task: TerraformInstaller@0  # Install Terraform
+            inputs:
+              terraformVersion: $(terraformVersion)
+
           - task: TerraformTaskV4@4
             inputs:
               provider: 'azurerm'
@@ -79,6 +83,10 @@ stages:
             inputs:
               artifactName: 'terraform-state'
               downloadPath: 'terraform'
+          
+          - task: TerraformInstaller@0  # Install Terraform
+            inputs:
+              terraformVersion: $(terraformVersion)
               
           - task: TerraformTaskV4@4
             inputs:
