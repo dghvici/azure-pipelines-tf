@@ -10,7 +10,7 @@ variables:
   terraformVersion: '1.5.5'  # Specify the Terraform version
   azureServiceConnection: 'azurerm'  # Azure service connection name
   backendResourceGroup: 'skink-rg' # Remote backend Resource Group
-  backendStorageAccount: 'skinktfstate'  # Remote backend storage account
+  backendStorageAccount: 'skinktfstate123456'  # Remote backend storage account
   backendContainer: 'tfstate'  # Remote backend storage container
   backendKey: 'terraform.tfstate'  # State file name in remote backend
 
@@ -80,7 +80,7 @@ stages:
           timeoutInMinutes: 1440 # task times out in 1 day
           inputs:
               notifyUsers: |
-                  lukebyrnee97@gmail.com
+                  daniela.ghinchevici@gmail.com
               instructions: 'Please validate the build configuration and resume'
               onTimeout: 'reject'
       - job: TerraformApply
