@@ -1,7 +1,7 @@
 provider "azurerm" {
   features {}
 
-  subscription_id = "15bf39bd-005b-41d5-ae94-ff7a9cff417d"
+  subscription_id = "5cffa66c-6158-48c3-91ba-8c9cbb653d29"
 }
 
 module "dev_backend" {
