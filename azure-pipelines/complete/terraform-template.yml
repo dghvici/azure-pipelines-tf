@@ -50,7 +50,9 @@ jobs:
         inputs:
           artifactName: 'terraform-state-${{ parameters.environmentName }}'
           downloadPath: 'terraform'
-
+      - task: TerraformInstaller@0
+        inputs:
+          terraformVersion: '1.5.5'
       - task: TerraformTaskV4@4
         inputs:
           provider: 'azurerm'
@@ -79,6 +81,9 @@ jobs:
       runOnce:
         deploy:
           steps:
+            - task: TerraformInstaller@0
+              inputs:
+              terraformVersion: '1.5.5'
             - task: DownloadPipelineArtifact@2
               inputs:
                 artifactName: 'terraform-state-${{ parameters.environmentName }}'
