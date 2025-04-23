@@ -83,7 +83,7 @@ jobs:
           steps:
             - task: TerraformInstaller@0
               inputs:
-              terraformVersion: '1.5.5'
+                terraformVersion: '1.5.5'
             - task: DownloadPipelineArtifact@2
               inputs:
                 artifactName: 'terraform-state-${{ parameters.environmentName }}'
